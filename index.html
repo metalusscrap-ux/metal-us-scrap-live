@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Metal Scrap UAE | UAE Scrap Metal Calculator</title>
+    <meta name="description" content="Estimate UAE scrap metal value for copper, aluminium, brass, steel, stainless steel, lead, zinc, batteries, motors, and insulated wire in AED and major currencies.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://metalusscrap.com/">
+    <meta property="og:title" content="Metal Scrap UAE | UAE Scrap Metal Calculator">
+    <meta property="og:description" content="Calculate indicative UAE scrap metal value by metal, grade, weight, unit, and currency.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metalusscrap.com/">
+    <meta property="og:image" content="https://metalusscrap.com/assets/metal-scrap-hero.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preload" as="image" href="assets/metal-scrap-hero.png">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Metal Scrap UAE Scrap Metal Calculator",
+        "url": "https://metalusscrap.com/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "AED"
+        },
+        "description": "A free UAE scrap metal calculator for estimating metal value by grade, unit, and currency."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Metal Scrap UAE",
+        "url": "https://metalusscrap.com/",
+        "email": "contact@metalusscrap.com",
+        "areaServed": ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Fujairah", "Umm Al Quwain"],
+        "priceRange": "$$",
+        "description": "UAE scrap metal calculator and quote request service for recyclable metals."
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#calculator">Skip to calculator</a>
+
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Metal Scrap UAE home">
+          <span class="brand-mark">M</span>
+          <span class="brand-text">Metal Scrap UAE</span>
+        </a>
+        <div class="nav-links">
+          <a href="#calculator">Calculator</a>
+          <a href="#rates">Rates</a>
+          <a href="#guide">Guide</a>
+          <a href="#quote">Quote</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero" id="home" aria-label="Metal Scrap UAE">
+      <img class="hero-image" src="assets/metal-scrap-hero.png" alt="Organized recyclable scrap metals in a clean industrial yard">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">UAE scrap rate estimates</p>
+        <h1>Metal Scrap UAE</h1>
+        <p class="hero-copy">
+          Estimate scrap metal value by material, grade, weight, unit, and currency using AED market guide rates and live currency conversion.
+        </p>
+        <div class="hero-actions" aria-label="Primary actions">
+          <a class="button button-primary" href="#calculator">Open calculator</a>
+          <a class="button button-ghost" href="#quote">Request a quote</a>
+        </div>
+        <dl class="hero-metrics" aria-label="Calculator highlights">
+          <div>
+            <dt>Base market</dt>
+            <dd>UAE AED/kg</dd>
+          </div>
+          <div>
+            <dt>Units</dt>
+            <dd>g, kg, tonnes</dd>
+          </div>
+          <div>
+            <dt>Grades</dt>
+            <dd>Clean, mixed, low</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <main>
+      <section class="ad-band" aria-label="Sponsored placement">
+        <div class="container">
+          <div class="ad-slot ad-slot-wide" data-ad-slot="top" role="complementary">
+            <span>Sponsored</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="calculator-section" id="calculator">
+        <div class="container section-grid">
+          <div class="intro-block">
+            <p class="section-kicker">Scrap calculator</p>
+            <h2>Estimate value by metal, grade, and unit.</h2>
+            <p>
+              Choose a metal, select the condition, add weight, and convert the AED estimate into common UAE trading currencies.
+            </p>
+            <div class="status-stack">
+              <span id="rateStatus">Loading UAE guide rates...</span>
+              <span id="currencyStatus">Loading currency rates...</span>
+            </div>
+          </div>
+
+          <section class="calculator-shell" aria-label="Scrap metal calculator">
+            <form class="calculator-form" id="scrapCalculator">
+              <div class="field">
+                <label for="metalSelect">Metal</label>
+                <select id="metalSelect" name="metal"></select>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="gradeSelect">Grade</label>
+                  <select id="gradeSelect" name="grade">
+                    <option value="clean">Clean</option>
+                    <option value="mixed">Mixed</option>
+                    <option value="low">Low grade</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="unitSelect">Unit</label>
+                  <select id="unitSelect" name="unit">
+                    <option value="kg">Kilograms</option>
+                    <option value="g">Grams</option>
+                    <option value="tonne">Tonnes</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="weightInput">Weight</label>
+                  <input id="weightInput" name="weight" type="number" min="0" step="0.01" value="100" inputmode="decimal">
+                </div>
+                <div class="field">
+                  <label for="currencySelect">Currency</label>
+                  <select id="currencySelect" name="currency">
+                    <option value="AED">AED</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="INR">INR</option>
+                    <option value="PKR">PKR</option>
+                    <option value="SAR">SAR</option>
+                    <option value="QAR">QAR</option>
+                    <option value="KWD">KWD</option>
+                    <option value="OMR">OMR</option>
+                  </select>
+                </div>
+              </div>
+
+              <button class="button button-primary full-width" type="submit">Calculate value</button>
+            </form>
+
+            <div class="result-panel" aria-live="polite">
+              <p class="result-label">Estimated value</p>
+              <p class="result-amount" id="resultAmount">AED 0.00</p>
+              <div class="result-grid">
+                <div>
+                  <span>Rate</span>
+                  <strong id="ratePerKg">AED 0.00/kg</strong>
+                </div>
+                <div>
+                  <span>Weight</span>
+                  <strong id="weightKg">0 kg</strong>
+                </div>
+                <div>
+                  <span>AED value</span>
+                  <strong id="aedValue">AED 0.00</strong>
+                </div>
+                <div>
+                  <span>Range</span>
+                  <strong id="rangeValue">AED 0.00 - AED 0.00</strong>
+                </div>
+              </div>
+              <button class="button button-secondary" type="button" id="copyEstimate">Copy estimate</button>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="rates-section" id="rates">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker">UAE market guide</p>
+            <h2>Indicative AED/kg scrap rates.</h2>
+            <p>
+              Final buying or selling price can move with volume, purity, pickup location, sorting, and daily market demand.
+            </p>
+          </div>
+          <div class="rate-table-wrap">
+            <table class="rate-table">
+              <thead>
+                <tr>
+                  <th scope="col">Metal</th>
+                  <th scope="col">Clean</th>
+                  <th scope="col">Mixed</th>
+                  <th scope="col">Low grade</th>
+                </tr>
+              </thead>
+              <tbody id="ratesTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band" id="guide">
+        <div class="container content-grid">
+          <article class="content-block">
+            <p class="section-kicker">Selling guide</p>
+            <h2>Better sorting usually means a better estimate.</h2>
+            <p>
+              Clean scrap is separated, dry, and mostly free from plastic, rubber, paint, oil, or mixed attachments. Mixed scrap has usable metal value but needs more handling. Low grade material is heavily mixed, corroded, insulated, contaminated, or difficult to process.
+            </p>
+          </article>
+          <article class="content-block">
+            <p class="section-kicker">UAE coverage</p>
+            <h2>Built for local enquiries.</h2>
+            <p>
+              The quote form captures metal type, estimated quantity, emirate, and pickup notes so a buyer or recycling contact can respond with a clearer estimate.
+            </p>
+          </article>
+          <aside class="ad-slot ad-slot-box" data-ad-slot="calculator" role="complementary">
+            <span>Sponsored</span>
+          </aside>
+        </div>
+      </section>
+
+      <section class="query-section" id="quote">
+        <div class="container query-grid">
+          <div class="section-heading left">
+            <p class="section-kicker">Request a Scrap Quote</p>
+            <h2>Send your scrap details for a clearer quote.</h2>
+            <p>
+              Your request goes to <a href="mailto:contact@metalusscrap.com">contact@metalusscrap.com</a>. Include photos and exact location later when the team replies.
+            </p>
+          </div>
+
+          <form class="query-form" action="https://formsubmit.co/contact@metalusscrap.com" method="POST">
+            <input type="hidden" name="_subject" value="New Metal Scrap UAE quote request">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://metalusscrap.com/thank-you.html">
+            <input type="hidden" name="estimate_summary" id="estimateSummary" value="">
+            <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="phone">Phone or WhatsApp</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="emirate">Emirate</label>
+                <select id="emirate" name="emirate" required>
+                  <option value="">Select emirate</option>
+                  <option>Dubai</option>
+                  <option>Abu Dhabi</option>
+                  <option>Sharjah</option>
+                  <option>Ajman</option>
+                  <option>Ras Al Khaimah</option>
+                  <option>Fujairah</option>
+                  <option>Umm Al Quwain</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="queryMetal">Metal type</label>
+                <input id="queryMetal" name="metal_type" type="text" placeholder="Copper, aluminium, mixed scrap">
+              </div>
+              <div class="field">
+                <label for="queryQuantity">Estimated quantity</label>
+                <input id="queryQuantity" name="quantity" type="text" placeholder="Example: 250 kg">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Pickup location, material condition, timing, or quote details"></textarea>
+            </div>
+
+            <button class="button button-primary full-width" type="submit">Request quote</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker">Answers</p>
+            <h2 id="faq-title">Scrap calculator questions.</h2>
+          </div>
+          <div class="faq-grid">
+            <details>
+              <summary>Are the scrap rates guaranteed?</summary>
+              <p>No. The calculator provides indicative UAE guide values. Final quotes depend on inspection, sorting, purity, weight, transport, and buyer demand.</p>
+            </details>
+            <details>
+              <summary>Which metals are included?</summary>
+              <p>Copper, aluminium, brass, stainless steel, iron and steel, lead, zinc, batteries, electric motors, and insulated copper wire are included in the first version.</p>
+            </details>
+            <details>
+              <summary>How are currency conversions updated?</summary>
+              <p>The site uses a free no-key currency endpoint when available and falls back to the most recent stored exchange values if the endpoint is unavailable.</p>
+            </details>
+            <details>
+              <summary>Can this become fully live for UAE scrap prices?</summary>
+              <p>Yes. The site reads scrap rates from a JSON feed. Updating that feed daily, manually or through a later backend task, updates the website without redesigning the page.</p>
+            </details>
+            <details>
+              <summary>Why can a buyer quote differ from the calculator?</summary>
+              <p>The calculator does not inspect material. Buyers may adjust prices for dirt, plastic, insulation, moisture, mixed metals, transport cost, minimum quantity, and the exact grade received.</p>
+            </details>
+            <details>
+              <summary>Should I send photos before pickup?</summary>
+              <p>Yes. Clear photos of the material, quantity, and storage location help a buyer estimate grade, loading access, and pickup requirements before visiting.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="ad-band bottom" aria-label="Sponsored placement">
+        <div class="container">
+          <div class="ad-slot ad-slot-wide" data-ad-slot="footer" role="complementary">
+            <span>Sponsored</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand footer-brand" href="#home">
+            <span class="brand-mark">M</span>
+            <span class="brand-text">Metal Scrap UAE</span>
+          </a>
+          <p>UAE scrap metal estimates, currency conversion, and quote request routing.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#quote">Request Quote</a>
+          <a href="#faq">FAQ</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="rate-disclaimer.html">Rate Disclaimer</a>
+          <a href="mailto:contact@metalusscrap.com">contact@metalusscrap.com</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+      <p>This site may use cookies for ads, analytics, and form security once those services are enabled.</p>
+      <button class="button button-secondary" type="button" id="acceptCookies">Accept</button>
+    </div>
+
+    <script src="assets/calculator.js"></script>
+  </body>
+</html>
