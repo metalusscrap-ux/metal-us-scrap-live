@@ -1,0 +1,109 @@
+{
+  "market": "UAE indicative scrap market",
+  "baseCurrency": "AED",
+  "unit": "kg",
+  "lastUpdated": "2026-06-29",
+  "sourceNote": "Indicative starting rates for online estimates. Replace this file with your own daily UAE market feed or manually updated rates before relying on it for commercial quotes.",
+  "metals": [
+    {
+      "id": "copper",
+      "name": "Copper",
+      "description": "Bright wire, pipes, busbars",
+      "rates": {
+        "clean": 29.5,
+        "mixed": 25.5,
+        "low": 18
+      }
+    },
+    {
+      "id": "aluminium",
+      "name": "Aluminium",
+      "description": "Profiles, wheels, sheets",
+      "rates": {
+        "clean": 4.8,
+        "mixed": 3.8,
+        "low": 2.6
+      }
+    },
+    {
+      "id": "brass",
+      "name": "Brass",
+      "description": "Fittings, valves, taps",
+      "rates": {
+        "clean": 17,
+        "mixed": 14,
+        "low": 10
+      }
+    },
+    {
+      "id": "stainless",
+      "name": "Stainless steel",
+      "description": "304/316 sheets and parts",
+      "rates": {
+        "clean": 3.2,
+        "mixed": 2.4,
+        "low": 1.35
+      }
+    },
+    {
+      "id": "steel",
+      "name": "Iron and steel",
+      "description": "HMS, fabrication scrap",
+      "rates": {
+        "clean": 1.05,
+        "mixed": 0.8,
+        "low": 0.5
+      }
+    },
+    {
+      "id": "lead",
+      "name": "Lead",
+      "description": "Sheets, weights, soft lead",
+      "rates": {
+        "clean": 6.2,
+        "mixed": 5.1,
+        "low": 3.6
+      }
+    },
+    {
+      "id": "zinc",
+      "name": "Zinc",
+      "description": "Die cast and zinc pieces",
+      "rates": {
+        "clean": 5.5,
+        "mixed": 4.4,
+        "low": 3
+      }
+    },
+    {
+      "id": "battery",
+      "name": "Car batteries",
+      "description": "Lead acid batteries",
+      "rates": {
+        "clean": 2.7,
+        "mixed": 2.25,
+        "low": 1.55
+      }
+    },
+    {
+      "id": "motors",
+      "name": "Electric motors",
+      "description": "Small and industrial motors",
+      "rates": {
+        "clean": 2.4,
+        "mixed": 1.85,
+        "low": 1.2
+      }
+    },
+    {
+      "id": "wire",
+      "name": "Insulated copper wire",
+      "description": "PVC insulated cable",
+      "rates": {
+        "clean": 12.5,
+        "mixed": 9.5,
+        "low": 6
+      }
+    }
+  ]
+}
